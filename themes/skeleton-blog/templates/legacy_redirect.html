@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="Refresh" content="<{$time}>; url=<{$url}>" />
+<title><{$xoops_sitename}></title>
+<link rel="stylesheet" href="<{$xoops_url}>/themes/skeleton-blog/css/layout.css" />
+
+<style>
+* {	margin: 0; padding: 0;}
+
+body 
+	{
+	background: #dedede;
+	color: #444;
+	font-size: 13px;
+	font-family:Trebuchet MS, Helvetia, Tahoma, Verdana, Arial, sans-serif;
+	}
+	
+	a, a:visited  
+	{
+	color:#444;
+	}
+
+a:hover, a:active
+	{ color:#C30; 	}
+	
+	h3 { font-size:18px;}
+	
+	div.message
+	{
+	margin:150px auto;
+	text-align:center;
+	font-weight : bold;
+	line-height:3em;
+	}
+</style>
+
+</head>
+<body>
+<div class="message">
+  <h3><{$message}></h3>
+  <br />
+  <p><{$lang_ifnotreload}></p>
+  <br />
+  		  <div id="loader" class="icon48">0</div>
+		  <script type="text/javascript">var loaderSymbols = ['0', '1', '2', '3', '4', '5', '6', '7'], loaderRate = 100, loaderIndex = 0, loader= function() { document.getElementById('loader').innerHTML = loaderSymbols[loaderIndex]; loaderIndex = loaderIndex  < loaderSymbols.length - 1 ? loaderIndex + 1 : 0; setTimeout(loader, loaderRate); }; loader(); </script>
+
+</div>
+</body>
+</html>

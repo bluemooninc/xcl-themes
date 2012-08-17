@@ -1,0 +1,25 @@
+<!-- 
+//////////////////// User Menu -->
+
+	<li><a href="#"><i class="icon16">U</i><{$xoops_uname}></a>
+	<ul>
+		<li><a href="<{$xoops_url}>/user.php"><i class="icon16">&#62;</i> <{$smarty.const._MB_LEGACY_VACNT}></a></li>
+		<li><a href="<{$xoops_url}>/edituser.php"><i class="icon16">&#86;</i> <{$smarty.const._MB_LEGACY_EACNT}></a></li>
+		<li><a href="<{$xoops_url}>/notifications.php"><i class="icon16">c</i> <{$smarty.const._MB_LEGACY_NOTIF}></a></li>
+
+		<{if $block.flagShowInbox}>
+			<{if $block.new_messages > 0}>
+			<li><a href="<{$block.inbox_url}>"><i class="icon16">&#64;</i> <{$smarty.const._MB_LEGACY_INBOX}> 
+			( <{$block.new_messages}> )</a></li>
+				<{else}>
+				<li><a href="<{$block.inbox_url}>"><i class="icon16">&#64;</i> <{$smarty.const._MB_LEGACY_INBOX}></a></li>
+			<{/if}>
+		<{/if}>
+
+	<{if $block.show_adminlink}>
+	<li><a href="<{$xoops_url}>/admin.php"><i class="icon16">w</i> <{$smarty.const._MB_LEGACY_ADMENU}></a></li>
+	<{/if}>
+
+	<li><a href="<{$xoops_url}>/user.php?op=logout"><i class="icon16">X</i> <{$smarty.const._MB_LEGACY_LOUT}></a></li>
+	</ul>
+	</li>

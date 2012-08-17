@@ -1,0 +1,23 @@
+<!-- 
+//////////////////// Main Menu -->
+
+<li><a href="<{$xoops_url}>/"><i class="icon16">&#62;</i> <{$smarty.const._MB_LEGACY_HOME}></a></li>
+
+<{foreach item=module from=$block.modules}>
+    
+	<{if $module.sublinks}>
+		<li><a href="<{$xoops_url}>/modules/<{$module.directory}>/"><{$module.name}></a>
+			<ul>
+			<{foreach item=sublink from=$module.sublinks}>
+				<li><a href="<{$sublink.url}>"><{$sublink.name}></a></li>
+			<{/foreach}>
+			</ul>
+		</li>	
+
+			<{else}>	
+	
+		<li><a href="<{$xoops_url}>/modules/<{$module.directory}>/"><{$module.name}></a></li>
+
+	<{/if}>
+
+<{/foreach}>

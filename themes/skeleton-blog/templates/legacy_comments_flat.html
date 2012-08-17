@@ -1,0 +1,6 @@
+<p><{$lang_poster}> :: <{$lang_thread}></p>
+	<section class="comments">
+		<{foreach item=comment from=$comments}>
+			<{include file="db:legacy_comment.html" comment=$comment}>
+		<{/foreach}>
+	</section>

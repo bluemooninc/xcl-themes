@@ -1,0 +1,48 @@
+
+<article class="comment">
+<a class="comment-img" href="#non">
+<{if $comment.poster.avatar!="blank.gif"}>
+<img src="<{$xoops_upload_url}>/<{$comment.poster.avatar}>" width="50" height="50" alt="" />
+<{else}>
+<img src="<{$xoops_url}>/modules/user/images/no_avatar.gif" width="50" height="50" alt="" />
+<{/if}>
+</a>
+
+      <div class="comment-body">
+        <div class="text">
+          <p><{$comment.image}><{$comment.title}></p>
+		  <div><{$comment.text}></div>
+        </div>
+        <p class="attribution">
+			<a id="comment<{$comment.id}>"></a> <{$comment.poster.uname}> 
+			<i class="icon16" title="<{$lang_posted}>">P</i><{$comment.date_posted}> :: <{$lang_updated}>: <{$comment.date_modified}>
+			<br>
+		<{if $xoops_iscommentadmin == true}>
+ 
+        <a href="<{$editcomment_link}>&amp;com_id=<{$comment.id}>">
+		<img src="<{$xoops_url}>/images/icons/edit.gif" alt="<{$lang_edit}>" title="<{$lang_edit}>" /></a>
+        <a href="<{$deletecomment_link}>&amp;com_id=<{$comment.id}>">
+		<img src="<{$xoops_url}>/images/icons/delete.gif" alt="<{$lang_delete}>" title="<{$lang_delete}>" /></a>
+     
+        <a href="<{$replycomment_link}>&amp;com_id=<{$comment.id}>">
+		<img src="<{$xoops_url}>/images/icons/reply.gif" alt="<{$lang_reply}>" title="<{$lang_reply}>" /></a>
+      
+    <{elseif $xoops_isuser == true && $xoops_userid == $comment.poster.id}>
+    
+        <a href="<{$editcomment_link}>&amp;com_id=<{$comment.id}>">
+		<img src="<{$xoops_url}>/images/icons/edit.gif" alt="<{$lang_edit}>" title="<{$lang_edit}>" /></a>
+ 
+        <a href="<{$replycomment_link}>&amp;com_id=<{$comment.id}>">
+		<img src="<{$xoops_url}>/images/icons/reply.gif" alt="<{$lang_reply}>" title="<{$lang_reply}>" /></a>
+ 
+    <{elseif $xoops_isuser == true || ($xoops_isuser == false && $com_anonpost == true)}>
+	
+        <a href="<{$replycomment_link}>&amp;com_id=<{$comment.id}>">
+		<img src="<{$xoops_url}>/images/icons/reply.gif" alt="<{$lang_reply}>" title="<{$lang_reply}>" /></a>
+    
+    <{else}>
+      &nbsp;
+    <{/if}>
+		</p>
+      </div>
+</article>

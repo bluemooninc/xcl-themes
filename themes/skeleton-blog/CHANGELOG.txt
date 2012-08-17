@@ -1,0 +1,51 @@
+----------------------------------------------------------------------------
+   Release notes for XOOPS Cube Theme
+----------------------------------------------------------------------------
+
+   Theme Name: Skeleton-Blog
+
+   Version: 2.2
+
+   by Nuno Luciano
+   http://nunoluciano.info
+   https://github.com/gigamaster
+
+	<!-- /////////////////////////// Credits & License
+	/*
+	* XOOPS Cube Legacy 2.2.x
+	* XCL Theme Skeleton-Blog
+	* by Nuno Luciano
+	* www.nunoluciano.info
+	* License : Creative Commons
+	* Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+	* http://creativecommons.org/licenses/by-sa/3.0/
+	* 27/07/2012
+	*/
+	 --> 
+----------------------------------------------------------------------------
+  Change Log
+----------------------------------------------------------------------------
+
+= 27.07.2012 V1.0
++ Initial Theme Design
+
+= 28.07.2012 V1.1
++ Add Skeleton Boilerplate
++ Add Block-left to the top Navigation
++ Add Block-Center to layout bottom
++ Add background graphics and scheme color
++ Add HTML5 and CSS3 to improve UX design
+
+= 30.07.2012 V2.0
++ Add text file with plugins Flickr, Twitter 
++ Remove optional plugins from blog layout
++ Fix templates of module Bulletin
++ Fix templates of module Legacy (blocks user & main, comments)
+
+= 08.08.2012 V2.1
++ Fix CSS Pagination
++ Fix CSS Forms
++ Fix Comments Timeline
+
+= 17.08.2012 V2.2
++ Update Documentation

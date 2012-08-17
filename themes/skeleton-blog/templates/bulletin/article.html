@@ -1,0 +1,68 @@
+<{strip}>
+
+<{include file="db:`$mydirname`_head.html"}>
+
+<div>
+<{include file="db:`$mydirname`_item.html" story=$story}>
+</div>
+
+<{if $pagenav}>
+  <div class="pagination"><p align="center"><{$pagenav}></p></div>
+<{/if}>
+
+
+
+<{* RELATED ARTICLES *}>
+<{include file="db:`$mydirname`_relations.html"}>
+
+<{* RECENT NEWS IN THIS CATEGORY *}>
+<{include file="db:`$mydirname`_category.html"}>
+
+<{if $disp_print_icon or $disp_tell_icon}>
+  <div style="text-align: right;">
+
+  <{if $disp_print_icon}>
+    <a href="<{$mydirurl}>/index.php?page=print&amp;storyid=<{$story.id}>" title="<{$smarty.const._MD_PRINTERFRIENDLY}>">
+    <img src="<{$xoops_url}>/themes/skeleton-blog/images/print16.png" border="0" alt="<{$smarty.const._MD_PRINTERFRIENDLY}>" /></a>&nbsp;
+  <{/if}>
+
+  <{if $disp_tell_icon}>
+    <a target="_top" href="<{$mail_link}>" title="<{$smarty.const._MD_SENDSTORY}>">
+    <img src="<{$xoops_url}>/themes/skeleton-blog/images/sendmail16.png" border="0" alt="<{$smarty.const._MD_SENDSTORY}>" /></a>
+  <{/if}>
+
+  </div>
+<{/if}>
+
+<hr>
+
+	<{if $mod_config.comment_dirname != '' && $mod_config.comment_forum_id > 0}>
+	
+		<{d3comment class="BulletinD3commentStory" mydirname=$mydirname}>
+	
+	<{else}>
+	
+	<!-- begin comments area -->
+
+	<{$commentsnav}>
+	
+	<p class="comments-notice"><i class="icon16">W</i><{$lang_notice}></p>
+	
+	
+		<!-- start comments loop -->
+		<div>
+		<{if $comment_mode == "flat"}>
+		<{include file="db:legacy_comments_flat.html"}>
+		<{elseif $comment_mode == "thread"}>
+		<{include file="db:system_comments_thread.html"}>
+		<{elseif $comment_mode == "nest"}>
+		<{include file="db:system_comments_nest.html"}>
+		<{/if}>
+		</div>
+		<!-- end comments loop -->
+	
+	<{/if}><!-- end comments area -->
+
+<{include file='db:legacy_notification_select.html'}>
+
+<{/strip}>

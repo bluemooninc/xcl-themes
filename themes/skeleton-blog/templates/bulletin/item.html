@@ -1,0 +1,91 @@
+<{strip}>
+
+<article>
+	<div class="two columns alpha thumbnail">
+		<figure>
+		<{if $story.topic_url}>
+      	<a href="<{$mydirurl}>/index.php?storytopic=<{$story.topicid}>" title="<{$story.topic}>"><img src="<{$story.topic_url}>" alt="<{$story.topic}>" /></a>
+    	<{/if}>
+		</figure>
+	</div><!-- /three-->	
+
+	<div class="eight columns omega">
+		
+		<{if $story.type == 0}>
+			<p class="comments-notice"><a href="<{$mydirurl}>/index.php?page=submit&amp;storyid=<{$story.id}>" title="<{$smarty.const._MD_APPROVE}>"><i class="icon16">W</i><{$smarty.const._MD_APPROVE}></a></p>
+		<{/if}>
+	
+	<div class="topic">
+	<ul class="breadcrumb">
+	<li><a href="<{$mydirurl}>/index.php?storytopic=<{$story.topicid}>" title="<{$story.topic}>"><{$story.topic}></a></li>
+	<{if $story.title_link}>
+		<li><a href="<{$mydirurl}>/index.php?page=article&amp;storyid=<{$story.id}>" title="<{$story.title}>"><{$story.title}></a></li>
+	<{else}>
+		<li><{$story.title}></li>
+	<{/if}>
+	</ul>
+	</div>
+	
+	<h3><{$story.title}></h3>
+				
+	<p class="meta"><em><{$smarty.const._MD_POSTEDBY}>
+	<{if $story.uid}>
+	&nbsp;<a href="<{$xoops_url}>/userinfo.php?uid=<{$story.uid}>" title="<{$smarty.const._PROFILE}>"><{$story.uname}></a>
+	<{else}>
+	&nbsp;<{$story.uname}>
+	<{/if}> 
+	&nbsp;<i class="icon16">P</i><{$smarty.const._ON}>&nbsp;<{$story.posttime}> <i class="icon16">N</i><{$story.hits}> <{$smarty.const._READS}></em>
+	&nbsp;<{if $mod_config.comment_dirname != '' && $mod_config.comment_forum_id > 0}>
+	
+	<{d3comment class="BulletinD3commentStory" mydirname=$mydirname mode="count" var="comments_count"}>
+	
+	<{if $comments_count}>
+		 <a href="<{$mydirurl}>/index.php?page=article&amp;storyid=<{$story.id}>" title="<{$smarty.const._COMMENTS}>">
+		 <i class="icon16">e</i><{$comments_count|string_format:$smarty.const._MD_NUMCOMMENTS}></a>
+	<{else}>
+		 <a href="<{$mydirurl}>/index.php?page=article&amp;storyid=<{$story.id}>" title="<{$smarty.const._COMMENTS}>">
+		 <i class="icon16">d</i><{$smarty.const._MD_COMMENTS}></a>
+	<{/if}>
+	
+	<{else}>
+	<a href="<{$mydirurl}>/index.php?page=article&amp;storyid=<{$story.id}>" title="<{$smarty.const._COMMENTS}>">
+	<i class="icon16">c</i><{$story.comentstotal}></a>
+	<{/if}>
+	</p>	
+	
+	
+	<div><{$story.text}></div>
+
+
+<div class="itemFoot">
+<p class="itemAdminLink">
+<{if $story.can_edit or $story.can_delete}>
+&nbsp;[&nbsp;
+  <{if $story.can_edit }>
+	<a href="<{$mydirurl}>/index.php?page=submit&amp;storyid=<{$story.id}>" title="<{$smarty.const._EDIT}>"><{$smarty.const._EDIT}></a>
+  <{/if}>
+  <{if $story.can_edit and $story.can_delete}>
+&nbsp;|&nbsp;
+  <{/if}>
+  <{if $story.can_delete }>
+	 <a href="<{$mydirurl}>/index.php?page=submit&amp;op=delete&amp;storyid=<{$story.id}>" title="<{$smarty.const._DELETE}>"><{$smarty.const._DELETE}></a>
+  <{/if}>
+&nbsp;]&nbsp;
+<{/if}>
+</p>
+<p class="itemPermaLink">
+<{if $story.readmore}>
+<a href="<{$mydirurl}>/index.php?page=article&amp;storyid=<{$story.id}>" title="<{$smarty.const._MD_READMORE}>"><{$smarty.const._MD_READMORE}></a> | <{$story.bytes}> |
+<{/if}>
+
+
+</p>
+</div>
+
+						
+	</div><!-- /seven-->	
+</article><!-- /blog post-->
+
+<hr>
+
+<{/strip}>

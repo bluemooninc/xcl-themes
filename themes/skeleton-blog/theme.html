@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="<{$xoops_langcode}>"> <!--<![endif]-->
+<head>
+
+	<!-- /////////////////////////// Credits & License
+	/*
+	* XOOPS Cube Legacy 2.2.x
+	* XCL Theme Skeleton Blog
+	* by Nuno Luciano
+	* http://nunoluciano.info
+	* https://github.com/gigamaster
+	* License : Creative Commons
+	* Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+	* http://creativecommons.org/licenses/by-sa/3.0/
+	* 27/07/2012
+	*/
+	 --> 
+	 
+	<!-- /////////////////////////// XOOPS Cube Legacy Renderer
+	-->
+	<meta charset="<{$xoops_charset}>">
+	<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+	<meta name="robots" content="<{$xoops_meta_robots}>" />
+    <meta name="keywords" content="<{$xoops_meta_keywords}>" />
+    <meta name="description" content="<{$xoops_meta_description}>" />
+    <meta name="rating" content="<{$xoops_meta_rating}>" />
+    <meta name="author" content="<{$xoops_meta_author}> :: Theme Design by Nuno Luciano" />
+    <meta name="copyright" content="<{$xoops_meta_copyright}>" />
+    <meta name="generator" content="XOOPS Cube" />
+
+	<!-- /////////////////////////// Mobile Specific Metas
+	-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- /////////////////////////// CSS
+	 -->
+	<link rel="stylesheet" href="<{$xoops_imageurl}>css/style.css">
+	<link rel="stylesheet" href="<{$xoops_imageurl}>css/skeleton.css">
+	<link rel="stylesheet" href="<{$xoops_imageurl}>css/layout.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- /////////////////////////// Favicons
+	-->
+	<link rel="shortcut icon" href="<{$xoops_imageurl}>images/favicon.ico">
+	<link rel="apple-touch-icon" href="<{$xoops_imageurl}>images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="<{$xoops_imageurl}>images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="<{$xoops_imageurl}>images/apple-touch-icon-114x114.png">
+
+	<!-- /////////////////////////// Module & Block Header
+	-->
+	<{$xoops_module_header}>
+	<script type="text/javascript">
+	<!--
+	<{$xoops_js}>
+	// -->
+	</script>
+	<{$xoops_block_header}>
+
+</head>
+<body>
+
+<div class="layout">
+
+		<div class="header">
+			<header class="container main">
+				<div class="sixteen columns">
+					<h1 class="logo"><a href=""><{$xoops_sitename}></a></h1>
+					<!-- Search -->
+					<div class="socialinks">
+					<p><a href="#"><i class="icon24">t</i></a> <a href="#"><i class="icon24">f</i></a> <a href="#"><i class="icon24">g</i></a> <a href="#"><i class="icon24">y</i></a> <a href="#"><i class="icon24">m</i></a>  <a href="#"><i class="icon24">B</i></a></p>
+					<form class="search clearfix" action="<{$xoops_url}>/search.php" method="get">
+						  <input type=search name=query placeholder="xoops cube">&nbsp;
+						  <{xoops_input type=hidden name=andor value=AND}>
+						  <{xoops_input type=hidden name=action value=results }>
+						  <{xoops_input type=submit name=submit value=$smarty.const._MB_LEGACY_SEARCH }>
+						</form>
+					</div><!-- /socialinks -->
+				</div>			
+			</header>
+		</div><!-- /header -->	
+		
+
+		<div class="nav">
+			<nav class="container mainav">
+				<div class="sixteen columns">
+				
+					<!-- /////////////////////////// BLOCK Left
+					-->		
+					<{if $xoops_showlblock == 1}>
+						<ul>
+							<{foreach item=block from=$xoops_lblocks}>
+								<{$block.content}>
+							<{/foreach}>
+						</ul>
+					<{/if}>
+				</div>
+			</nav>
+		</div><!--/nav-->	
+		
+
+
+		<div class="container">
+
+
+				<!-- /////////////////////////// Slider
+				-->
+				<div class="sixteen columns">
+					<ul class="slides">
+						<li>
+							<figure>
+								<img src="<{$xoops_imageurl}>images/slide1.jpg" alt="" />
+							</figure>
+						</li>	
+					</ul>
+				</div>
+				
+				<hr>
+				
+
+				<!-- /////////////////////////// Module Content
+				-->
+				<div class="ten columns">
+					<{if !empty($xoops_contents)}>
+						<div id="content"><{$xoops_contents}></div>
+					<{/if}>
+				</div>		
+
+
+
+			<aside class="six columns offset-by-one">
+				<div class="rightcolumn clearfix">
+				
+				<!-- /////////////////////////// BLOCK Right
+				-->
+				<{if $xoops_showrblock == 1}>
+					<{foreach item=block from=$xoops_rblocks}>
+						<header>
+							<h4>
+							<{if $xoops_isadmin}>
+								<a href="<{$xoops_url}>/modules/legacy/admin/index.php?action=BlockEdit&amp;bid=<{$block.id}>"><i class="icon16">K</i></a>
+							<{/if}>
+							<{$block.title}>
+							</h4>
+						</header>
+							<div class="rightblockContent row"><{$block.content}></div>
+					<{/foreach}>
+				<{/if}>		
+
+				</div><!-- /rightcolumn -->	
+			</aside><!-- /six-->
+	
+	
+					
+		</div><!-- /container-->
+				
+
+
+	<div class="footer">
+	<footer class="container main">
+
+		<!-- /////////////////////////// CENTER BLOCKS
+		-->
+		<{if $xoops_showcblock == 1}>
+		
+		<!-- /////////////////////////// BLOCK CENTER-LEFT 
+	 	-->
+		<div class="one-third column">
+			<{foreach item=block from=$xoops_clblocks}>
+				<h3>
+					<{if $xoops_isadmin}>
+						<a href="<{$xoops_url}>/modules/legacy/admin/index.php?action=BlockEdit&amp;bid=<{$block.id}>"><i class="icon16">K</i></a>
+					<{/if}>
+					<{$block.title}>
+				</h3>
+				<div class="centerCblockContent"><{$block.content}></div>
+			<{/foreach}>
+		</div>
+
+		<!-- /////////////////////////// BLOCK CENTER-CENTER 
+	 	-->
+		<div class="one-third column">
+			<{foreach item=block from=$xoops_ccblocks}>
+				<h3>
+					<{if $xoops_isadmin}>
+						<a href="<{$xoops_url}>/modules/legacy/admin/index.php?action=BlockEdit&amp;bid=<{$block.id}>"><i class="icon16">K</i></a>
+					<{/if}>
+				<{$block.title}>
+				</h3>
+				<div class="centerCblockContent"><{$block.content}></div>
+			<{/foreach}>
+		</div>
+
+		<!-- /////////////////////////// BLOCK CENTER-RIGHT 
+	 	-->
+		<div class="one-third column">
+		<{foreach item=block from=$xoops_crblocks}>
+			<h3>
+				<{if $xoops_isadmin}>
+					<a href="<{$xoops_url}>/modules/legacy/admin/index.php?action=BlockEdit&amp;bid=<{$block.id}>"><i class="icon16">K</i></a>
+				<{/if}>
+			<{$block.title}>
+			</h3>
+			<div class="centerCblockContent"><{$block.content}></div>
+		 <{/foreach}>
+		</div>
+
+		<{/if}>
+
+	
+	</footer><!-- /container main -->
+	</div><!-- /footer-->
+		
+
+	<div class="footer-credits">	
+		
+		<footer class="container">
+			<div class="row">
+				<div class="fourteen columns credit-author">
+				<p><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Responsive XCL Theme Skeleton Blog</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://nunoluciano.info" property="cc:attributionName" rel="cc:attributionURL">Nuno luciano</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br> <{$xoops_footer}></p>
+				</div><!--end eight-->
+	
+				<div class="two columns credit-top">
+					<p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a>
+					</p>
+				</div><!-- /eight-->
+			</div>
+		</footer><!-- /container -->
+		
+	</div><!--/footer-credits-->
+
+</div><!-- /layout-->	
+
+	<!--JS plugins-->
+	<script src="<{$xoops_imageurl}>js/jquery.tweet.js"></script>
+	<script src="<{$xoops_imageurl}>js/tabs.js"></script>
+	<!--Uncomment to instantiate JS plugins-->
+	<!--<script src="<{$xoops_imageurl}>js/plugins.js"></script>-->
+
+</body>
+</html>
